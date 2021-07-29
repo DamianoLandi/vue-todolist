@@ -9,11 +9,16 @@
 </head>
 <body>
     <div id="root">
-       <ul>
-           <li v-for="(element, index) in list"> {{element}} 
-               <button @click="removeItem(index)">Rimuovi</button>
-           </li>
-       </ul> 
+        <h1 v-if="!this.list.length">Non hai nulla da fare, vai a riposarti!</h1>
+        <ul v-else>
+            <li v-for="(element, index) in list"> {{element}} 
+                <button @click="removeItem(index)">&cross;</button>
+            </li>
+        </ul> 
+        <div class="input-container">
+            <input type="text" v-model="newItem" placeholder="Scrivi qui">
+            <button id="add" @click="addItem">Aggiungi alla Lista</button>
+        </div>
     </div>
     <script src="./js/script.js"></script>
 </body>
