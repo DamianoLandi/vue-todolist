@@ -9,6 +9,8 @@ const root = new Vue({
         ]
     },
     methods:{
-
+        removeItem(i){
+            this.list.splice(i, 1);
+        }
     },
 }); 

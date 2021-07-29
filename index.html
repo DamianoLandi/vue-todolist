@@ -10,7 +10,9 @@
 <body>
     <div id="root">
        <ul>
-           <li v-for="element in list"> {{element}} </li>
+           <li v-for="(element, index) in list"> {{element}} 
+               <button @click="removeItem(index)">Rimuovi</button>
+           </li>
        </ul> 
     </div>
     <script src="./js/script.js"></script>
