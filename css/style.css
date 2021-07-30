@@ -16,6 +16,19 @@
     font-family: montserrat, sans-serif;
 }
 
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 400px;
+    margin: 75px auto;
+    margin-bottom: 0;
+}
+
+nav input{
+    width: 80%;
+}
+
 h1{
     margin-bottom: 50px;
 }

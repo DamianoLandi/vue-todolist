@@ -11,9 +11,13 @@
 </head>
 <body>
     <div id="root">
+        <nav>
+            <input type="text" name="" id="" v-model="searchTerm">
+            <i class="fas fa-search"></i>
+        </nav>
         <h1 v-if="!this.list.length">Non hai nulla da fare, vai a riposarti!</h1>
         <ul v-else>
-            <li v-for="(element, index) in list"> 
+            <li v-for="(element, index) in list" v-if=" searchTerm === '' || searchTerm.trim() === '' || list[index].text.toLowerCase().includes(searchTerm.trim().toLowerCase())"> 
                 <div @click="toggleDone(index)" class="clickable">
                     <i class="far" :class="list[index].done ? 'fa-check-square' : 'fa-square'"></i>
                     <span :class="list[index].done ? 'done-task' : ''"> {{element.text}} </span>

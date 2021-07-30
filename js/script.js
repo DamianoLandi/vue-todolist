@@ -20,6 +20,7 @@ const root = new Vue({
             },
         ],
         newItem:"",
+        searchTerm:"",
 
     },
     methods:{
@@ -41,6 +42,6 @@ const root = new Vue({
                 };
             });
             this.list = newList;
-        }
+        },
     },
 }); 
