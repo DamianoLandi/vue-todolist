@@ -64,3 +64,11 @@ input{
     border-radius: 15px;
     padding: 0 5px
 }
+
+.done-task{
+    color: lightgray;
+}
+
+.clickable{
+    cursor: pointer;
+}

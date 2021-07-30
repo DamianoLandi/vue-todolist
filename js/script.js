@@ -2,12 +2,25 @@ const root = new Vue({
     el: "#root",
     data:{
         list:[
-            "Comprare il pane",
-            "Andare alle poste",
-            "Ricaricare il telefono",
-            "Ripassare HTML e CSS",
+            {
+                text: "Comprare il pane",
+                done: false,
+            },
+            {
+                text: "Andare alle poste",
+                done: false,
+            },
+            {
+                text: "Ricaricare il telefono",
+                done: false,
+            },
+            {
+                text: "Ripassare HTML e CSS",
+                done: false,
+            },
         ],
         newItem:"",
+
     },
     methods:{
         removeItem(i){
@@ -15,9 +28,19 @@ const root = new Vue({
         },
         addItem(){
             if(this.newItem.trim() != "" && !this.list.includes(this.newItem)){
-                this.list.push(this.newItem);
+                this.list.push({text: this.newItem, done: false});
             };
             this.newItem = "";
         },
+        toggleDone(i){
+            const newList = this.list.map((item, currentIndex) => {
+                if(currentIndex === i){
+                    return {text: this.list[currentIndex].text, done: !this.list[currentIndex].done}
+                }else{
+                    return this.list[currentIndex];
+                };
+            });
+            this.list = newList;
+        }
     },
 }); 
